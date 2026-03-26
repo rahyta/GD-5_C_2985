@@ -1,3 +1,0 @@
-Link repository public GitHub: https://github.com/rahyta/kartu-digital-saya
-
-Link situs live Vercel: https://kartu-digital-saya-lake.vercel.app/
