@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOM API Javascript</title>
+<link rel="stylesheet" href="style.css" >
+</head>
+
+<body>
+    <div class="box">
+        <h3>Website Ubah Warna</h3>
+        <br>
+        <label>Pilih warna teks:</label>
+        <input type="color" id="textColor">
+        <br>
+        <div class="file-row">
+            <label>Pilih gambar:</label>
+            <input type="file" id="filebg" accept="image/*">
+        </div>
+    </div>
+
+<script>
+var txtColor = document.getElementById("textColor");
+txtColor.addEventListener("input", function(){
+    document.body.style.color = txtColor.value;
+});
+
+filebg.addEventListener("change", (event) => {
+    var doc = event.target.files[0];
+    if (doc) {
+        var file = new FileReader();
+        file.onload = function(e) {
+            document.body.style.backgroundImage = `url('${e.target.result}')`;
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundRepeat = "no-repeat";
+            document.body.style.backgroundPosition = "center";
+        };
+        file.readAsDataURL(doc);
+    }
+});
+</script>
+</body>
+</html>
